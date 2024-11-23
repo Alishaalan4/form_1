@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job App</title>
+    <style>
+        body
+        {
+            font-family:'Times New Roman', Times, serif;
+            /* hexa-decimal color */
+            background-color: #f4f7f9;
+            color: #333;
+            /* padding for all sides */
+            padding: 20px;
+            /*flex-box layout mode=> flexibale structure  */
+            /* center everything in the middle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #jobApplicationForm
+        {
+            /* take the maximum width of the given width */
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            /* make it circular border */
+            border-radius: 8px;
+            /* shadow to appear higher than the defualt */
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
+        div
+        {
+            margin-bottom: 20px;
+        }
+        label
+        {
+            /* give it all the horizental space */
+            display: block;
+            /* the down below is far by 8px */
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        input,select,textarea,button
+        {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 15px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        /* focus : when i click on it ,  hover : when i hover on it */
+        input:focus,select:focus,textarea:focus
+        {
+            border-color: #4CAF50;
+            /* outline : line for outer border */
+            outline: none;
+        }
+
+        input[type="radio"]
+        {
+            /* as much as it needs */
+            width: auto;
+            margin-right: 10px;
+        }
+        .radio-group
+        {
+            display: flex;
+            align-items: center;
+        }
+        button
+        {
+            width: 100%;
+            padding: 15px;
+            background-color:#4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;   
+        }
+        button[type="reset"]
+        {
+            background-color: #f44336;
+        }
+        /* make the color darker a bit when hovered */
+        button:hover
+        {
+            background-color: #45a049;
+        }
+
+        button[type="reset"]:hover
+        {
+            background-color:#d32f2f;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- form for a job application app -->
+    <!-- id : not repeatable and used by js  -->
+    <form action="" id="jobApplicationForm">
+        
+        <div>
+            <!-- id = for => same -->
+            <label for="full_name">Full Name:</label>
+            <input type="text"  id="full_name" name="full_name" required>
+        </div>
+
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="phone">Phone Number:</label>
+            <!-- pattern is the way that the user should enter the needed info  -->
+            <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
+        </div>
+
+        <div>
+            <label for="position">Position Applied For:</label>
+            <select name="position" id="position" required>
+                <option value="">Select a Position</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="Project Manager">Project Manager</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="salary">Desired Salary</label>
+            <input type="number" name="salary" id="salary">
+        </div>
+
+        <div>
+            <label for="cover_letter">Cover Letter</label>
+            <textarea name="cover_letter" id="cover_letter" rows="5" cols="50" maxlength="500" placeholder="Enter your Cover Letter here..."></textarea>
+        </div>
+
+        <div>
+            <label for="resume">Resume:</label>
+            <!-- accpet: for validation -->
+            <input type="file" name="resume" id="resume" accept=".pdf,.doc,.docx">
+        </div>
+
+        <div class="radio-group">
+            <label for="gender">Gender: </label>
+            <input type="radio" id="gender_male" name="gender" value="male" required>
+            <label for="gender_male">Male</label>
+
+            <label for="gender"></label>
+            <input type="radio" id="gender_female" name="gender" value="female" required>
+            <label for="gender_female">Female</label>
+        </div>
+
+        <div>
+            <label for="experience">Years of Experience</label>
+            <input type="number" name="experience" id="experience" max="12" min="1" required>
+        </div>
+
+        <div>
+            <button type="reset">Reset</button>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</body>
+</html>
